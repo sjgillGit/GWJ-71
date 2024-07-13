@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7ufj1du46iqg"]
+
+[ext_resource type="Script" path="res://Scripts/creature_traits.gd" id="1_0ifht"]
+
+[node name="Creature_traits" type="Node"]
+script = ExtResource("1_0ifht")
