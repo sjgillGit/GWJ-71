@@ -1,0 +1,73 @@
+[gd_scene load_steps=23 format=3 uid="uid://cmn8cv4xlsjwe"]
+
+[ext_resource type="Script" path="res://Scripts/Characters/Player.gd" id="1_76kdn"]
+[ext_resource type="Script" path="res://Scripts/Input/MovingController.gd" id="1_fxogy"]
+[ext_resource type="Script" path="res://Scripts/Characters/Footsteps/FootstepsHandler.gd" id="2_bwxk5"]
+[ext_resource type="Script" path="res://Scripts/Input/CameraController.gd" id="2_cxgxp"]
+[ext_resource type="Script" path="res://Scripts/Characters/Footsteps/FootstepsMaterial.gd" id="3_iwsd6"]
+[ext_resource type="AudioStream" uid="uid://dj0g5ou2kwjdo" path="res://Assets/Audio/Steps/Stone/step1.wav" id="4_k3r5c"]
+[ext_resource type="AudioStream" uid="uid://dkmuhk2sw2bgp" path="res://Assets/Audio/Steps/Stone/step2.wav" id="5_wecrs"]
+[ext_resource type="AudioStream" uid="uid://bolbaknxgf3f5" path="res://Assets/Audio/Steps/Stone/step3.wav" id="6_jds36"]
+[ext_resource type="AudioStream" uid="uid://df0c8kwt77dtl" path="res://Assets/Audio/Steps/Stone/step4.wav" id="7_jxatl"]
+[ext_resource type="AudioStream" uid="uid://cdg2hdxmdliay" path="res://Assets/Audio/Steps/Stone/jump.wav" id="8_dx83o"]
+[ext_resource type="AudioStream" uid="uid://bcssl36dq411c" path="res://Assets/Audio/Steps/Stone/land.wav" id="9_lk3i7"]
+[ext_resource type="AudioStream" uid="uid://dobewl8nsd2yb" path="res://Assets/Audio/Steps/Wood/step1.wav" id="10_n3ovx"]
+[ext_resource type="AudioStream" uid="uid://hvo3g45mmu5t" path="res://Assets/Audio/Steps/Wood/step2.wav" id="11_qhmm3"]
+[ext_resource type="AudioStream" uid="uid://cosg11ib1ydks" path="res://Assets/Audio/Steps/Wood/step3.wav" id="12_nfn05"]
+[ext_resource type="AudioStream" uid="uid://c8n1shh3dv76g" path="res://Assets/Audio/Steps/Wood/run1.wav" id="13_klbdl"]
+[ext_resource type="AudioStream" uid="uid://oio0qwglfwqs" path="res://Assets/Audio/Steps/Wood/run2.wav" id="14_7saf2"]
+[ext_resource type="AudioStream" uid="uid://djh7s0us340qp" path="res://Assets/Audio/Steps/Wood/run3.wav" id="15_11ql1"]
+[ext_resource type="AudioStream" uid="uid://brerhw37yx57g" path="res://Assets/Audio/Steps/Wood/run4.wav" id="16_00n62"]
+[ext_resource type="AudioStream" uid="uid://d2grsqdvupkve" path="res://Assets/Audio/Steps/Wood/jump.wav" id="17_ucrfd"]
+[ext_resource type="AudioStream" uid="uid://wrekgdapboyf" path="res://Assets/Audio/Steps/Wood/land.wav" id="18_663t3"]
+[ext_resource type="Script" path="res://Scripts/Characters/Footsteps/FloorMaterialRay.gd" id="19_qsvhk"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f5c14"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_76kdn")
+
+[node name="Shape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_f5c14")
+
+[node name="MovingController" type="Node" parent="." node_paths=PackedStringArray("player")]
+script = ExtResource("1_fxogy")
+player = NodePath("..")
+
+[node name="CameraController" type="Node3D" parent="." node_paths=PackedStringArray("player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+script = ExtResource("2_cxgxp")
+player = NodePath("..")
+
+[node name="Camera" type="Camera3D" parent="CameraController"]
+
+[node name="FootstepsAudio" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.129428, 0)
+unit_size = 3.0
+max_db = 1.0
+
+[node name="FootstepsHandler" type="Node" parent="FootstepsAudio" node_paths=PackedStringArray("audio_player", "player")]
+script = ExtResource("2_bwxk5")
+audio_player = NodePath("..")
+player = NodePath("../..")
+
+[node name="Stone" type="Node" parent="FootstepsAudio/FootstepsHandler"]
+script = ExtResource("3_iwsd6")
+walk_variants = Array[AudioStream]([ExtResource("4_k3r5c"), ExtResource("5_wecrs"), ExtResource("6_jds36"), ExtResource("7_jxatl")])
+run_variants = Array[AudioStream]([ExtResource("4_k3r5c"), ExtResource("5_wecrs"), ExtResource("6_jds36"), ExtResource("7_jxatl")])
+jump_sound = ExtResource("8_dx83o")
+land_sound = ExtResource("9_lk3i7")
+
+[node name="Wood" type="Node" parent="FootstepsAudio/FootstepsHandler"]
+script = ExtResource("3_iwsd6")
+material_enum = 1
+walk_variants = Array[AudioStream]([ExtResource("10_n3ovx"), ExtResource("11_qhmm3"), ExtResource("12_nfn05")])
+run_variants = Array[AudioStream]([ExtResource("13_klbdl"), ExtResource("14_7saf2"), ExtResource("15_11ql1"), ExtResource("16_00n62")])
+jump_sound = ExtResource("17_ucrfd")
+land_sound = ExtResource("18_663t3")
+
+[node name="FloorMaterialRay" type="RayCast3D" parent="." node_paths=PackedStringArray("footsteps_handler")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+script = ExtResource("19_qsvhk")
+footsteps_handler = NodePath("../FootstepsAudio/FootstepsHandler")
