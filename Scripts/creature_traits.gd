@@ -29,3 +29,25 @@ func trait_change(change: Dictionary):
 	for element in change:
 		traits[element] += change[element]
 		traits[element] = clamp(traits[element], 0, 100)
+
+# Sets new base_creature and 
+func set_type(new_type: String):
+	
+	if new_type == 'rat':
+		base_creature = 'rat'
+		gender_male = randi_range(0, 1)
+		traits = {'size': randi_range(1, 5),          'strength': randi_range(1, 8),
+				  'intelligence': randi_range(1, 8),  'aggression': randi_range(80, 80),
+				  'cuteness': randi_range(5, 12),     'speed': randi_range(10, 35)}
+		return
+	
+	if new_type == 'bunny':
+		base_creature = 'bunny'
+		gender_male = randi_range(0, 1)
+		traits = {'size': randi_range(1, 10),          'strength': randi_range(1, 10),
+				  'intelligence': randi_range(1, 5),  'aggression': randi_range(1, 15),
+				  'cuteness': randi_range(40, 90),     'speed': randi_range(25, 50)}
+		return
+	# More creature types need to be added here
+	
+	print('Non-existing creature type: ', new_type)

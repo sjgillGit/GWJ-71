@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Enums="*res://Scripts/Utils/Enums.gd"
+CreatureTypes="*res://Scripts/creature_types.gd"
 
 [input]
 
