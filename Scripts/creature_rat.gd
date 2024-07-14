@@ -4,16 +4,25 @@ class_name Rat
 # Initializing creature traits
 func _ready():
 	var traits = $Creature_traits
-	var trait_range = {'size': randi_range(1, 5),          'strength': randi_range(1, 8),
-					   'intelligence': randi_range(1, 8),  'aggression': randi_range(1, 10),
-					   'cuteness': randi_range(5, 12),     'speed': randi_range(10, 35)}
-	
 	print('Creature created: ', name)
-	traits.base_creature = 'rat'
-	traits.gender_male = randi_range(0, 1)
-	traits.trait_change(trait_range)
+	traits.set_type('rat') # Must initialize the type for any BASIC creature
 	traits.print_traits()
-
+	
+	''' For testing
+	var mutations = CreatureTypes.get(traits.base_creature)
+	var possible_mutations = []
+	for mutation in mutations:
+		if traits.traits['size'] not in mutation.req['size']: continue
+		if traits.traits['strength'] not in mutation.req['strength']: continue
+		if traits.traits['intelligence'] not in mutation.req['intelligence']: continue
+		if traits.traits['aggression'] not in mutation.req['aggression']: continue
+		if traits.traits['cuteness'] not in mutation.req['cuteness']: continue
+		if traits.traits['speed'] not in mutation.req['speed']: continue
+		possible_mutations.append(mutation['name'])
+	if not possible_mutations.is_empty():
+		var mutation_picked = possible_mutations.pick_random()
+		print(mutation_picked)
+	#'''
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
