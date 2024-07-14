@@ -5,7 +5,7 @@ class_name Creature_traits
 
 # Default traits
 @export var base_creature: String
-@export var gender_male: bool      = 1
+@export var gender_male: bool = 1
 @export var traits = {'size': 0, 'strength': 0, 'intelligence': 0, 'aggression': 0, 'cuteness': 0, 'speed': 0}
 
 # Called when the node enters the scene tree for the first time.
