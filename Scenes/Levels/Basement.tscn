@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://balmmwsvdbio1"]
+[gd_scene load_steps=22 format=3 uid="uid://dhr6kpc67i27"]
 
 [ext_resource type="PackedScene" uid="uid://cbfnkskvyfj0k" path="res://Assets/3DModels/Basement/floor.glb" id="1_yf52i"]
 [ext_resource type="PhysicsMaterial" uid="uid://ch6oe3rrtxpgo" path="res://Assets/PhysicsMaterials/stone.tres" id="2_d5kqs"]
@@ -71,6 +71,7 @@ shape = SubResource("BoxShape3D_t0r7a")
 
 [node name="Ceiling" parent="." instance=ExtResource("3_qbbu7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.743, 76.8513, 1.42283)
+visible = false
 
 [node name="Cage 1" parent="." instance=ExtResource("4_x8ck7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.3124, 0.448047, -2.90018)
