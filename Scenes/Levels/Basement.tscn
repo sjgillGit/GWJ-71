@@ -1,142 +1,121 @@
-[gd_scene load_steps=22 format=3 uid="uid://balmmwsvdbio1"]
+[gd_scene load_steps=19 format=3 uid="uid://balmmwsvdbio1"]
 
-[ext_resource type="PackedScene" uid="uid://cbfnkskvyfj0k" path="res://Assets/3DModels/Basement/floor.glb" id="1_yf52i"]
-[ext_resource type="PhysicsMaterial" uid="uid://ch6oe3rrtxpgo" path="res://Assets/PhysicsMaterials/stone.tres" id="2_d5kqs"]
-[ext_resource type="PackedScene" uid="uid://dwrq0kmhgngru" path="res://Assets/3DModels/Basement/walls.glb" id="2_wlsl3"]
-[ext_resource type="PackedScene" uid="uid://0lgy2pxxhmjc" path="res://Assets/3DModels/Basement/Ceiling.glb" id="3_qbbu7"]
-[ext_resource type="PackedScene" uid="uid://cenm0p06niybv" path="res://Assets/3DModels/Basement/Cage 1.glb" id="4_x8ck7"]
-[ext_resource type="PackedScene" uid="uid://c2epmrg3075r6" path="res://Assets/3DModels/Basement/Fish tank.glb" id="5_m73lw"]
-[ext_resource type="PackedScene" uid="uid://b7w7qgucu7arw" path="res://Assets/3DModels/Basement/Shelf.glb" id="6_wet86"]
-[ext_resource type="PackedScene" uid="uid://cmn8cv4xlsjwe" path="res://Scenes/Prefabs/Player/Player.tscn" id="7_km7uf"]
-[ext_resource type="PackedScene" uid="uid://cssijrwjp04r4" path="res://Assets/3DModels/Basement/shelf 2.glb" id="9_5f26v"]
-[ext_resource type="PackedScene" uid="uid://deglo0f2pbaqs" path="res://Assets/3DModels/Basement/ladder.glb" id="10_lvy0c"]
-[ext_resource type="PackedScene" uid="uid://d1dqowu1awq1f" path="res://Assets/3DModels/Basement/door and stairs.glb" id="11_8yhw7"]
-[ext_resource type="PackedScene" uid="uid://bywsfkl62nk34" path="res://Assets/3DModels/Basement/crate.glb" id="12_jx023"]
-[ext_resource type="PackedScene" uid="uid://130h70ppub7t" path="res://Assets/3DModels/Basement/Chest.glb" id="13_w7eaj"]
-[ext_resource type="PackedScene" uid="uid://c5kki8i02j0v6" path="res://Assets/3DModels/Basement/cabinet.glb" id="14_vqxfd"]
-[ext_resource type="PackedScene" uid="uid://gifnlo3j6lvc" path="res://Assets/3DModels/Basement/bars.glb" id="15_ml84n"]
-[ext_resource type="PackedScene" uid="uid://bcwl7cg23f5kt" path="res://Assets/3DModels/Basement/Axe.glb" id="16_8i3m5"]
-[ext_resource type="PackedScene" uid="uid://b6ha56cmmyje" path="res://Assets/3DModels/Basement/Beaker container.glb" id="17_56wud"]
-[ext_resource type="PackedScene" uid="uid://c1j7gymhxpsia" path="res://Assets/3DModels/Basement/Table.glb" id="18_0kdq5"]
-[ext_resource type="PackedScene" uid="uid://bjxm4148dyc8c" path="res://Assets/3DModels/Basement/Filtration powder.glb" id="19_lkp53"]
+[ext_resource type="PackedScene" uid="uid://cn0f3xtrg1v14" path="res://Assets/3DModels/Basement/Foundation/Basement.glb" id="1_icye2"]
+[ext_resource type="PackedScene" uid="uid://bdul7cabxrk6b" path="res://Assets/3DModels/Basement/DoorNStairs/DoorNStairs.glb" id="2_caer8"]
+[ext_resource type="PackedScene" uid="uid://cmn8cv4xlsjwe" path="res://Scenes/Prefabs/Player/Player.tscn" id="3_q4ay8"]
+[ext_resource type="PackedScene" uid="uid://dlb0phh8up51l" path="res://Assets/3DModels/Basement/Axe/Axe.glb" id="4_l2pp0"]
+[ext_resource type="PackedScene" uid="uid://ckm2smnrvlcfu" path="res://Assets/3DModels/Basement/Beaker container/Beaker container.glb" id="5_aj2hr"]
+[ext_resource type="PackedScene" uid="uid://datlrxykmcoc4" path="res://Assets/3DModels/Basement/cabinet/cabinet.glb" id="6_mp3ln"]
+[ext_resource type="PackedScene" uid="uid://pkw4iol2lbj4" path="res://Assets/3DModels/Basement/Cage 1/Cage 1.glb" id="7_ets3w"]
+[ext_resource type="PackedScene" uid="uid://d1348iq5bobgv" path="res://Assets/3DModels/Basement/Chest/Chest.glb" id="8_7rnwa"]
+[ext_resource type="PackedScene" uid="uid://cy5xaf4xuff7r" path="res://Assets/3DModels/Basement/crate/crate.glb" id="9_e577w"]
+[ext_resource type="PackedScene" uid="uid://48fsug3ectrp" path="res://Assets/3DModels/Basement/Crate 2/Crate 2.glb" id="10_r6vd8"]
+[ext_resource type="PackedScene" uid="uid://dkwfkm25lgn30" path="res://Assets/3DModels/Basement/Filtration Powder/Filtration powder.glb" id="11_3nv2u"]
+[ext_resource type="PackedScene" uid="uid://b5vkpgu2ms5f" path="res://Assets/3DModels/Basement/Fish Tank/Fish tank.glb" id="12_uys7b"]
+[ext_resource type="PackedScene" uid="uid://nd6anjjb0s48" path="res://Assets/3DModels/Basement/Shelf/Shelf.glb" id="13_umtjr"]
+[ext_resource type="PackedScene" uid="uid://dkbhc3s114m0c" path="res://Assets/3DModels/Basement/shelf 2/shelf 2.glb" id="14_c0f5u"]
+[ext_resource type="PackedScene" uid="uid://c5kloe2h3q0x0" path="res://Assets/3DModels/Basement/Table/Table.glb" id="15_ovv2y"]
+[ext_resource type="PackedScene" uid="uid://jqsak7r4w8yl" path="res://Assets/3DModels/Basement/Ladder/Ladder.glb" id="16_xia6l"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ya7j7"]
-size = Vector3(124.761, 1, 138.889)
+[sub_resource type="BoxShape3D" id="BoxShape3D_xsjmc"]
+size = Vector3(144.232, 44.4752, 0.329834)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_t0r7a"]
-size = Vector3(135.353, 29.0229, 1)
+[sub_resource type="BoxShape3D" id="BoxShape3D_apktm"]
+size = Vector3(115.881, 0.594177, 137.106)
 
-[node name="Node3D" type="Node3D"]
+[node name="Basement" type="Node3D"]
 
-[node name="floor" parent="." instance=ExtResource("1_yf52i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0675335, 0, 0.0872915)
+[node name="Basement" parent="." instance=ExtResource("1_icye2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.0492, -9.52065, 15.2279)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="floor"]
-physics_material_override = ExtResource("2_d5kqs")
+[node name="StaticBody3D" type="StaticBody3D" parent="Basement"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.54347)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="floor/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.126709, 0, -26.9263)
-shape = SubResource("BoxShape3D_ya7j7")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Basement/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.600952, 16.9368, 41.8722)
+shape = SubResource("BoxShape3D_xsjmc")
 
-[node name="walls" parent="." instance=ExtResource("2_wlsl3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.09568, -5.6444, 0.165276)
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Basement/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.600952, 16.9368, -89.7825)
+shape = SubResource("BoxShape3D_xsjmc")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="walls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.74238, 24.4971, 38.5186)
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Basement/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -59.5519, 16.9368, -23.0484)
+shape = SubResource("BoxShape3D_xsjmc")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="walls/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.81638, -4.47297, 0)
-shape = SubResource("BoxShape3D_t0r7a")
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Basement/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 58.8188, 16.9368, -26.3697)
+shape = SubResource("BoxShape3D_xsjmc")
 
-[node name="StaticBody3D2" type="StaticBody3D" parent="walls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.74238, 24.4971, -93.4174)
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Basement/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.42239, 0.0471277, -24.8958)
+shape = SubResource("BoxShape3D_apktm")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="walls/StaticBody3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.81638, -4.47297, 0)
-shape = SubResource("BoxShape3D_t0r7a")
+[node name="DoorNStairs" parent="." instance=ExtResource("2_caer8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.3239, -9.75613, -74.8006)
 
-[node name="StaticBody3D3" type="StaticBody3D" parent="walls"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 58.8743, 24.4971, -16.1704)
+[node name="Player" parent="." instance=ExtResource("3_q4ay8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75.3466, -8.2683, 35.922)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="walls/StaticBody3D3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.8152, -4.47297, 0)
-shape = SubResource("BoxShape3D_t0r7a")
+[node name="Axe" parent="." instance=ExtResource("4_l2pp0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.3932, -9.1255, 53.3916)
 
-[node name="StaticBody3D4" type="StaticBody3D" parent="walls"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -60.2444, 24.4971, -23.9346)
+[node name="Beaker container" parent="." instance=ExtResource("5_aj2hr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.4652, -9.17644, 53.1926)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="walls/StaticBody3D4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.81638, -4.47297, 0)
-shape = SubResource("BoxShape3D_t0r7a")
+[node name="cabinet" parent="." instance=ExtResource("6_mp3ln")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.407, -9.17644, 52.3211)
 
-[node name="Ceiling" parent="." instance=ExtResource("3_qbbu7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.743, 76.8513, 1.42283)
+[node name="cabinet2" parent="." instance=ExtResource("6_mp3ln")]
+transform = Transform3D(-0.0790498, 0, 1.13286, 0, 0.626547, 0, -0.573209, 0, -0.15623, -78.292, -9.17644, 44.8137)
 
-[node name="Cage 1" parent="." instance=ExtResource("4_x8ck7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.3124, 0.448047, -2.90018)
+[node name="Cage 1" parent="." instance=ExtResource("7_ets3w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.1783, -9.17644, 50.173)
 
-[node name="Fish tank" parent="." instance=ExtResource("5_m73lw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6346, -3.80412, -33.57)
+[node name="Cage 2" parent="." instance=ExtResource("7_ets3w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.2509, -9.17644, 33.5749)
 
-[node name="Shelf" parent="." instance=ExtResource("6_wet86")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -57.7712, 0.427564, -12.9677)
+[node name="Chest" parent="." instance=ExtResource("8_7rnwa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.2909, -9.17644, 51.6109)
 
-[node name="Player" parent="." instance=ExtResource("7_km7uf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.8243, 8.54119, -14.2783)
+[node name="crate" parent="." instance=ExtResource("9_e577w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64.0729, -9.17644, 51.9852)
 
-[node name="shelf 2" parent="." instance=ExtResource("9_5f26v")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -57.9296, 0.397314, -5.25818)
+[node name="Crate 2" parent="." instance=ExtResource("10_r6vd8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.0527, -9.17644, 51.9995)
 
-[node name="ladder" parent="." instance=ExtResource("10_lvy0c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.2644, 0.383535, 38.4517)
+[node name="Filtration powder" parent="." instance=ExtResource("11_3nv2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67.7056, -9.17644, 52.4876)
 
-[node name="door and stairs" parent="." instance=ExtResource("11_8yhw7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.5144, 0, -89.6167)
+[node name="Fish tank" parent="." instance=ExtResource("12_uys7b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.8176, -9.17644, 16.9109)
 
-[node name="crate" parent="." instance=ExtResource("12_jx023")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.93125, 0.372941, 37.9634)
+[node name="Fish tank2" parent="." instance=ExtResource("12_uys7b")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -50.3538, -9.17644, 23.9122)
 
-[node name="Chest" parent="." instance=ExtResource("13_w7eaj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1604, 0.250104, 37.8661)
+[node name="Shelf" parent="." instance=ExtResource("13_umtjr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.4633, -9.17644, 52.3356)
 
-[node name="cabinet" parent="." instance=ExtResource("14_vqxfd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.1134, 0.284849, 37.7753)
+[node name="Shelf2" parent="." instance=ExtResource("13_umtjr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76.5685, -9.17644, 45.6441)
 
-[node name="bars" parent="." instance=ExtResource("15_ml84n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.50198, 0.872482, 28.693)
+[node name="shelf 2" parent="." instance=ExtResource("14_c0f5u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.4158, -9.17644, 52.3885)
 
-[node name="Axe" parent="." instance=ExtResource("16_8i3m5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.78781, 1.96083, 38.3429)
+[node name="shelf 3" parent="." instance=ExtResource("14_c0f5u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76.9611, -9.17644, 41.3709)
 
-[node name="Beaker container" parent="." instance=ExtResource("17_56wud")]
-transform = Transform3D(0.617427, 0, 0.425775, 0, 0.75, 0, -0.425775, 0, 0.617427, -58.0041, 1.46467, -5.53067)
+[node name="Table" parent="." instance=ExtResource("15_ovv2y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.3225, -9.17644, 52.4459)
 
-[node name="Table" parent="." instance=ExtResource("18_0kdq5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4136, 0.396201, 37.9897)
+[node name="Table3" parent="." instance=ExtResource("15_ovv2y")]
+transform = Transform3D(0.162775, 0, -0.986663, 0, 1.72315, 0, 0.986663, 0, 0.162775, -53.3057, -9.17644, 32.3219)
 
-[node name="Filtration powder" parent="." instance=ExtResource("19_lkp53")]
-transform = Transform3D(-1.09278e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.09278e-08, -57.7695, 1.7095, -12.366)
+[node name="Table2" parent="." instance=ExtResource("15_ovv2y")]
+transform = Transform3D(1, 0, 0, 0, 2.09954, 0, 0, 0, 3.41213, -78.6637, -9.17644, 42.6134)
 
-[node name="OfficeDesk" parent="." instance=ExtResource("18_0kdq5")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 2.5, 0, -1, 0, -4.37114e-08, -7.11127, 0.396201, -1.94912)
+[node name="Ladder" parent="." instance=ExtResource("16_xia6l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75.111, -9.17644, 52.8926)
 
-[node name="Chest2" parent="." instance=ExtResource("13_w7eaj")]
-transform = Transform3D(1, 0, 0, 0, 0.588645, 0, 0, 0, 2.14253, -56.1669, 0.250104, -8.78341)
-
-[node name="Beaker container2" parent="." instance=ExtResource("17_56wud")]
-transform = Transform3D(0.617427, 0, 0.425775, 0, 0.75, 0, -0.425775, 0, 0.617427, -58.0041, 1.46467, -4.97163)
-
-[node name="Beaker container3" parent="." instance=ExtResource("17_56wud")]
-transform = Transform3D(0.411618, 0, 0.28385, 0, 0.5, 0, -0.28385, 0, 0.411618, -58.0041, 1.95703, -5.53067)
-
-[node name="Beaker container4" parent="." instance=ExtResource("17_56wud")]
-transform = Transform3D(0.411618, 0, 0.28385, 0, 0.5, 0, -0.28385, 0, 0.411618, -58.0041, 1.96699, -5.19009)
-
-[node name="Beaker container5" parent="." instance=ExtResource("17_56wud")]
-transform = Transform3D(0.411618, 0, 0.28385, 0, 0.5, 0, -0.28385, 0, 0.411618, -58.0041, 1.96892, -4.85653)
-
-[node name="Filtration powder2" parent="." instance=ExtResource("19_lkp53")]
-transform = Transform3D(-1.09278e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.09278e-08, -57.7695, 1.7095, -12.6246)
-
-[node name="Filtration powder3" parent="." instance=ExtResource("19_lkp53")]
-transform = Transform3D(-1.09278e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.09278e-08, -57.7695, 1.7095, -12.8951)
+[node name="Ladder2" parent="." instance=ExtResource("16_xia6l")]
+transform = Transform3D(0.609811, 0.0294205, -0.792169, -0.0174497, 1.20176, 0.0174524, 0.792355, 0.00382333, 0.610052, -55.2441, -9.17644, 28.2853)
