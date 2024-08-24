@@ -10,10 +10,11 @@ var is_request_open = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	request_name.text = ""
-	customer_name.text = ""
-	reward_text.text = ""
-	description_text.text = ""
+	request_name.text = "Name"
+	customer_name.text = "John"
+	reward_text.text = "123$"
+	description_text.text = "Test contract"
+	
 	pass # Replace with function body.
 
 

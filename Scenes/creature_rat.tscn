@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dnpkv4qje5660"]
+[gd_scene load_steps=3 format=3 uid="uid://bduq2sb18jt8x"]
 
 [ext_resource type="Script" path="res://Scripts/creature_rat.gd" id="1_3uphd"]
 [ext_resource type="Script" path="res://Scripts/creature_traits.gd" id="2_4tf0e"]
