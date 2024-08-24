@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://balmmwsvdbio1"]
+[gd_scene load_steps=23 format=3 uid="uid://balmmwsvdbio1"]
 
 [ext_resource type="PackedScene" uid="uid://cn0f3xtrg1v14" path="res://Assets/3DModels/Basement/Foundation/Basement.glb" id="1_icye2"]
 [ext_resource type="PackedScene" uid="uid://bdul7cabxrk6b" path="res://Assets/3DModels/Basement/DoorNStairs/DoorNStairs.glb" id="2_caer8"]
 [ext_resource type="PackedScene" uid="uid://cmn8cv4xlsjwe" path="res://Scenes/Prefabs/Player/Player.tscn" id="3_q4ay8"]
 [ext_resource type="PackedScene" uid="uid://dlb0phh8up51l" path="res://Assets/3DModels/Basement/Axe/Axe.glb" id="4_l2pp0"]
+[ext_resource type="Script" path="res://Scenes/Levels/Axe.gd" id="4_qvi1e"]
 [ext_resource type="PackedScene" uid="uid://ckm2smnrvlcfu" path="res://Assets/3DModels/Basement/Beaker container/Beaker container.glb" id="5_aj2hr"]
 [ext_resource type="PackedScene" uid="uid://datlrxykmcoc4" path="res://Assets/3DModels/Basement/cabinet/cabinet.glb" id="6_mp3ln"]
 [ext_resource type="PackedScene" uid="uid://pkw4iol2lbj4" path="res://Assets/3DModels/Basement/Cage 1/Cage 1.glb" id="7_ets3w"]
@@ -22,6 +23,15 @@ size = Vector3(144.232, 44.4752, 0.329834)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_apktm"]
 size = Vector3(115.881, 0.594177, 137.106)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_80j0i"]
+friction = 0.5
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hpb40"]
+radius = 0.274292
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yukyl"]
+size = Vector3(1, 4.854, 0.308716)
 
 [node name="Basement" type="Node3D"]
 
@@ -55,10 +65,21 @@ shape = SubResource("BoxShape3D_apktm")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.3239, -9.75613, -74.8006)
 
 [node name="Player" parent="." instance=ExtResource("3_q4ay8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75.3466, -8.2683, 35.922)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76.7516, -8.2683, 39.1471)
 
-[node name="Axe" parent="." instance=ExtResource("4_l2pp0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.3932, -9.1255, 53.3916)
+[node name="Axe" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78, 1, 40)
+mass = 0.2
+physics_material_override = SubResource("PhysicsMaterial_80j0i")
+can_sleep = false
+script = ExtResource("4_qvi1e")
+metadata/_edit_group_ = true
+
+[node name="Axe" parent="Axe" instance=ExtResource("4_l2pp0")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Axe"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0466843, 0.971205, 0.0268822)
+shape = SubResource("CapsuleShape3D_hpb40")
 
 [node name="Beaker container" parent="." instance=ExtResource("5_aj2hr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.4652, -9.17644, 53.1926)
@@ -117,5 +138,11 @@ transform = Transform3D(1, 0, 0, 0, 0.476295, 0, 0, 0, 0.293072, 2.09523, 0, 0.8
 [node name="cabinet2" parent="Table2" instance=ExtResource("6_mp3ln")]
 transform = Transform3D(-0.0790498, 0, 1.13286, 0, 0.298421, 0, -0.167991, 0, -0.0457867, 0.371666, 4.76837e-07, 0.644853)
 
-[node name="Ladder" parent="." instance=ExtResource("16_xia6l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75.111, -9.17644, 52.8926)
+[node name="Ladder" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75.111, -8.87147, 52.8926)
+
+[node name="Ladder" parent="Ladder" instance=ExtResource("16_xia6l")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ladder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.47339, -0.00948715)
+shape = SubResource("BoxShape3D_yukyl")

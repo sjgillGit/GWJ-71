@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cmn8cv4xlsjwe"]
+[gd_scene load_steps=24 format=3 uid="uid://cmn8cv4xlsjwe"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/Player.gd" id="1_76kdn"]
 [ext_resource type="Script" path="res://Scripts/Input/MovingController.gd" id="1_fxogy"]
@@ -21,6 +21,7 @@
 [ext_resource type="AudioStream" uid="uid://d2grsqdvupkve" path="res://Assets/Audio/Steps/Wood/jump.wav" id="17_ucrfd"]
 [ext_resource type="AudioStream" uid="uid://wrekgdapboyf" path="res://Assets/Audio/Steps/Wood/land.wav" id="18_663t3"]
 [ext_resource type="Script" path="res://Scripts/Characters/Footsteps/FloorMaterialRay.gd" id="19_qsvhk"]
+[ext_resource type="Script" path="res://Scenes/Prefabs/Player/InteractionNode.gd" id="22_0uvtb"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f5c14"]
 
@@ -39,6 +40,10 @@ player = NodePath("..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 script = ExtResource("2_cxgxp")
 player = NodePath("..")
+
+[node name="InteractRay" type="RayCast3D" parent="CameraController"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00240278, -0.033)
+target_position = Vector3(0, 0, -3)
 
 [node name="Camera" type="Camera3D" parent="CameraController"]
 
@@ -71,3 +76,15 @@ land_sound = ExtResource("18_663t3")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 script = ExtResource("19_qsvhk")
 footsteps_handler = NodePath("../FootstepsAudio/FootstepsHandler")
+
+[node name="DebugLabel" type="Label" parent="."]
+offset_right = 402.0
+offset_bottom = 59.0
+
+[node name="DebugLabel2" type="Label" parent="."]
+offset_top = 71.0
+offset_right = 402.0
+offset_bottom = 130.0
+
+[node name="InteractionNode" type="Node" parent="."]
+script = ExtResource("22_0uvtb")
