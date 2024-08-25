@@ -44,6 +44,9 @@ func handle_running() -> void:
 		if player.may_move and player.is_on_floor() \
 		else false
 
+func toggle_inventory():
+	if Input.is_action_just_pressed("Inventory"):
+		pass
 
 func update_player_velocity() -> void:
 	var direction = get_direction() if player.may_move else Vector3.ZERO
