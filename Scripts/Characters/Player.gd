@@ -14,6 +14,7 @@ signal Jump
 signal Land
 
 func _ready():
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	pass
 	
 

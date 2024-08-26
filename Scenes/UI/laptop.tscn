@@ -1,12 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://b2866ubj0npqf"]
+[gd_scene load_steps=11 format=3 uid="uid://b2866ubj0npqf"]
 
 [ext_resource type="Script" path="res://Scenes/UI/StaticBody3D.gd" id="1_je0x8"]
 [ext_resource type="Script" path="res://Scenes/UI/gui3d.gd" id="2_genas"]
 [ext_resource type="PackedScene" uid="uid://cg2ru71agh8t3" path="res://Scenes/UI/laptop screen UI.tscn" id="2_hv74x"]
 [ext_resource type="PackedScene" path="res://Assets/3DModels/Basement/Laptop.glb" id="2_i6k3b"]
+[ext_resource type="AudioStream" uid="uid://bjgb6rg8dv5vv" path="res://Assets/Audio/PCstartup.mp3" id="5_osfrq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mfmrt"]
-size = Vector3(1, 0.8, 0.299902)
+size = Vector3(1, 0.8, 0.001)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_e5yjr"]
 viewport_path = NodePath("gui3d/SubViewport")
@@ -28,7 +29,7 @@ size = Vector3(1, 0.8, 0.15)
 script = ExtResource("1_je0x8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LaptopBody"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.42491, -0.65109)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0343785, 0.450575, -0.493253)
 shape = SubResource("BoxShape3D_mfmrt")
 
 [node name="Laptop" parent="." instance=ExtResource("2_i6k3b")]
@@ -59,3 +60,9 @@ shape = SubResource("BoxShape3D_xa1jl")
 size = Vector2i(1152, 648)
 
 [node name="laptop screen" parent="gui3d/SubViewport" instance=ExtResource("2_hv74x")]
+
+[node name="StartupSound" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.393996)
+stream = ExtResource("5_osfrq")
+volume_db = -21.333
+unit_size = 1.0

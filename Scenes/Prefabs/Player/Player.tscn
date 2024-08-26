@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cmn8cv4xlsjwe"]
+[gd_scene load_steps=25 format=3 uid="uid://cmn8cv4xlsjwe"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/Player.gd" id="1_76kdn"]
 [ext_resource type="Script" path="res://Scripts/Input/MovingController.gd" id="1_fxogy"]
@@ -24,6 +24,8 @@
 [ext_resource type="Script" path="res://Scenes/Prefabs/Player/InteractionNode.gd" id="22_0uvtb"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f5c14"]
+
+[sub_resource type="Texture2DRD" id="Texture2DRD_eqof7"]
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_76kdn")
@@ -88,3 +90,10 @@ offset_bottom = 130.0
 
 [node name="InteractionNode" type="Node" parent="."]
 script = ExtResource("22_0uvtb")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 960.0
+offset_top = 530.0
+offset_right = 961.0
+offset_bottom = 531.0
+texture = SubResource("Texture2DRD_eqof7")

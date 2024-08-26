@@ -10,10 +10,16 @@ func _process(delta):
 	handle_input()
 
 func interact():
+	if !$"../gui3d/SubViewport/laptop screen".visible:
+		$"../gui3d/SubViewport/laptop screen".visible = true
+		$"../StartupSound".play()
+	
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	$"../Camera3D".current = true
 
+
 func handle_input():
-	if Input.is_action_just_pressed("ui_cancel"):
+	if Input.is_action_just_pressed("ui_cancel") or Input.is_action_just_pressed("RMB"):
 		player_cam.current = true
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
