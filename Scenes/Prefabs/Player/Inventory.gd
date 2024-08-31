@@ -1,8 +1,8 @@
 extends Node
 
 # Define the maximum number of items the inventory can hold
-@export var max_items: int = 5
-
+var max_items: int = 5
+@export var default_inventory_logo: Texture2D
 # This is the list that will store our inventory items
 var storage: Array = []
 var active_slot: int = 0
@@ -19,7 +19,7 @@ func _ready():
 
 
 func pick_up(item):
-	if active_slot != -1:
+	if active_slot != -1 and storage[active_slot] == null:
 		storage[active_slot] = item
 		# Item is frozen in space somewhere far
 		item.position.x = 500
@@ -28,7 +28,7 @@ func pick_up(item):
 		item.freeze = true
 		print('Picked up: ', storage[active_slot].name)
 		emit_signal('inventory_updated')
-		return
+		return active_slot
 	
 	for i in range(0, 4):
 		if storage[i] == null:
@@ -40,8 +40,10 @@ func pick_up(item):
 			item.freeze = true
 			print('Picked up: ', storage[i].name)
 			emit_signal('inventory_updated')
-			return
+			return i
+	
 	print('Inventory full')
+	return -1
 
 
 func drop():
@@ -107,11 +109,20 @@ func process_input():
 
 
 func _on_inventory_updated():
-	$"../ActiveSlot".text = 'Active slot: ' + str(active_slot)
-	var inv_slots = $"../InventoryUI".get_children()
+	$ActiveSlot.text = 'Active slot: ' + str(active_slot)
+	var inv_slots = $InventoryUI.get_children()
 	for slot in range(0, 5):
 		inv_slots[slot].color = Color(1, 0, 0, 1)
 		if storage[slot] != null:
-			inv_slots[slot].color = Color(0, 0, 1, 1)
+			# inv_slots[slot].color = Color(0, 0, 1, 1)
+			if storage[slot].find_child('Pickupable').Ui_texture != null:
+				var sprite = inv_slots[slot].get_child(0)
+				sprite.set_texture(storage[slot].find_child('Pickupable').Ui_texture)
+			else:
+				var sprite = inv_slots[slot].get_child(0)
+				sprite.set_texture(default_inventory_logo)
+		else:
+			var sprite = inv_slots[slot].get_child(0)
+			sprite.set_texture(null)
 	if active_slot != -1:
 		inv_slots[active_slot].color = Color(0, 1, 0, 1)

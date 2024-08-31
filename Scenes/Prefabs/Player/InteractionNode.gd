@@ -16,7 +16,14 @@ func handle_interactions():
 	collider = InteractRay.get_collider()
 	$"../DebugLabel".text = collider.name if collider else ''
 	
+	# Picking up
 	if Input.is_action_just_pressed("interact") and collider:
+		var pickupable = collider.find_child('Pickupable')
+		if pickupable:
+			pickupable.interact()
+			return
+	
+	# Interacting and pushing
 		if collider.has_method('interact'):
 			$"../DebugLabel2".text = 'Interacted with ' + collider.name
 			collider.interact()

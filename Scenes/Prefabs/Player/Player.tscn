@@ -1,10 +1,11 @@
-[gd_scene load_steps=26 format=3 uid="uid://cmn8cv4xlsjwe"]
+[gd_scene load_steps=27 format=3 uid="uid://cmn8cv4xlsjwe"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/Player.gd" id="1_76kdn"]
 [ext_resource type="Script" path="res://Scripts/Input/MovingController.gd" id="1_fxogy"]
 [ext_resource type="Script" path="res://Scripts/Characters/Footsteps/FootstepsHandler.gd" id="2_bwxk5"]
 [ext_resource type="Script" path="res://Scenes/Prefabs/Player/Inventory.gd" id="2_c8atv"]
 [ext_resource type="Script" path="res://Scripts/Input/CameraController.gd" id="2_cxgxp"]
+[ext_resource type="Texture2D" uid="uid://bxls3on0sh5hp" path="res://Assets/UI Textures/unknown.png" id="3_isve4"]
 [ext_resource type="Script" path="res://Scripts/Characters/Footsteps/FootstepsMaterial.gd" id="3_iwsd6"]
 [ext_resource type="AudioStream" uid="uid://dj0g5ou2kwjdo" path="res://Assets/Audio/Steps/Stone/step1.wav" id="4_k3r5c"]
 [ext_resource type="AudioStream" uid="uid://dkmuhk2sw2bgp" path="res://Assets/Audio/Steps/Stone/step2.wav" id="5_wecrs"]
@@ -33,6 +34,64 @@ script = ExtResource("1_76kdn")
 
 [node name="InventoryNode" type="Node" parent="." groups=["InventoryNode"]]
 script = ExtResource("2_c8atv")
+default_inventory_logo = ExtResource("3_isve4")
+
+[node name="ActiveSlot" type="Label" parent="InventoryNode"]
+offset_left = 723.0
+offset_top = 856.0
+offset_right = 823.0
+offset_bottom = 879.0
+
+[node name="InventoryUI" type="GridContainer" parent="InventoryNode"]
+custom_minimum_size = Vector2(50, 50)
+anchors_preset = -1
+offset_left = 723.0
+offset_top = 890.0
+offset_right = 1239.0
+offset_bottom = 990.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 5
+
+[node name="ColorRect" type="ColorRect" parent="InventoryNode/InventoryUI"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+color = Color(0, 1, 0, 1)
+
+[node name="Sprite" type="Sprite2D" parent="InventoryNode/InventoryUI/ColorRect"]
+position = Vector2(50, 50)
+
+[node name="ColorRect2" type="ColorRect" parent="InventoryNode/InventoryUI"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+color = Color(0, 0.572617, 0.0512847, 1)
+
+[node name="Sprite" type="Sprite2D" parent="InventoryNode/InventoryUI/ColorRect2"]
+position = Vector2(50, 50)
+
+[node name="ColorRect3" type="ColorRect" parent="InventoryNode/InventoryUI"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+color = Color(0, 0.572617, 0.0512847, 1)
+
+[node name="Sprite" type="Sprite2D" parent="InventoryNode/InventoryUI/ColorRect3"]
+position = Vector2(50, 50)
+
+[node name="ColorRect4" type="ColorRect" parent="InventoryNode/InventoryUI"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+color = Color(0, 0.572617, 0.0512847, 1)
+
+[node name="Sprite" type="Sprite2D" parent="InventoryNode/InventoryUI/ColorRect4"]
+position = Vector2(50, 50)
+
+[node name="ColorRect5" type="ColorRect" parent="InventoryNode/InventoryUI"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+color = Color(0, 0.572617, 0.0512847, 1)
+
+[node name="Sprite" type="Sprite2D" parent="InventoryNode/InventoryUI/ColorRect5"]
+position = Vector2(50, 50)
 
 [node name="MovingController" type="Node" parent="." node_paths=PackedStringArray("player")]
 script = ExtResource("1_fxogy")
@@ -104,47 +163,5 @@ offset_top = 530.0
 offset_right = 961.0
 offset_bottom = 531.0
 texture = SubResource("Texture2DRD_eqof7")
-
-[node name="ActiveSlot" type="Label" parent="."]
-offset_left = 561.0
-offset_top = 842.0
-offset_right = 642.0
-offset_bottom = 919.0
-
-[node name="InventoryUI" type="GridContainer" parent="."]
-custom_minimum_size = Vector2(50, 50)
-anchors_preset = -1
-offset_left = 723.0
-offset_top = 890.0
-offset_right = 1223.0
-offset_bottom = 990.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-columns = 5
-
-[node name="ColorRect" type="ColorRect" parent="InventoryUI"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-color = Color(0, 1, 0, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="InventoryUI"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-color = Color(0, 0.572617, 0.0512847, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="InventoryUI"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-color = Color(0, 0.572617, 0.0512847, 1)
-
-[node name="ColorRect4" type="ColorRect" parent="InventoryUI"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-color = Color(0, 0.572617, 0.0512847, 1)
-
-[node name="ColorRect5" type="ColorRect" parent="InventoryUI"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-color = Color(0, 0.572617, 0.0512847, 1)
 
 [connection signal="inventory_updated" from="InventoryNode" to="InventoryNode" method="_on_inventory_updated"]
