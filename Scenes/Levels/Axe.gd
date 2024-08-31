@@ -1,5 +1,5 @@
 extends RigidBody3D
-
+var pickupable = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,7 +11,9 @@ func _process(delta):
 	pass
 
 func interact():
-	var impulse = $"../Player".position.direction_to(position).normalized()*50
-	apply_central_force(impulse)
+	var inventory = get_tree().get_nodes_in_group('InventoryNode')[0]
+	inventory.pick_up(self)
+	#var impulse = $"../Player".position.direction_to(position).normalized()*50
+	#apply_central_force(impulse)
 
 
