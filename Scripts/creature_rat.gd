@@ -7,7 +7,6 @@ func _ready():
 	print('Creature created: ', name)
 	traits.set_type('rat') # Must initialize the type for any BASIC creature
 	traits.print_traits()
-	
 	''' For testing
 	var mutations = CreatureTypes.get(traits.base_creature)
 	var possible_mutations = []
@@ -24,6 +23,3 @@ func _ready():
 		print(mutation_picked)
 	#'''
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass

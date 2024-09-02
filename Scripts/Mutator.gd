@@ -1,9 +1,12 @@
 extends Node
+@onready var creature_ind_ON = $Meshes/IndicatorCreatureON
+@onready var creature_ind_OFF = $Meshes/IndicatorCreatureOFF
+@onready var left_slot = $LeftSlot
 # This code will become a part of the "mutator machine", which takes an animal cage(starting_traits) 
 # and a vial with chemicals(trait_change), changes the creature and checks if it matches any possible mutations
 
 func _ready():
-	pass
+	state_update()
 
 func mutate(): # Accepts a creature node and a "chemicals vial" this is a placeholder for now
 	# var starting_traits = creature_node.creature_traits
@@ -35,4 +38,11 @@ func mutate(): # Accepts a creature node and a "chemicals vial" this is a placeh
 		var mutation_picked = possible_mutations.pick_random()
 		print(mutation_picked)
 
+
+func state_update():
+	if left_slot.creature_inside:
+		creature_ind_ON.visible = true
+	else:
+		creature_ind_ON.visible = false
+	
 

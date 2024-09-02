@@ -28,7 +28,7 @@ func pick_up(item):
 		item.freeze = true
 		print('Picked up: ', storage[active_slot].name)
 		emit_signal('inventory_updated')
-		return active_slot
+		return true
 	
 	for i in range(0, 4):
 		if storage[i] == null:
@@ -40,10 +40,10 @@ func pick_up(item):
 			item.freeze = true
 			print('Picked up: ', storage[i].name)
 			emit_signal('inventory_updated')
-			return i
+			return true
 	
 	print('Inventory full')
-	return -1
+	return false
 
 
 func drop():

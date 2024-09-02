@@ -36,19 +36,27 @@ script = ExtResource("1_76kdn")
 script = ExtResource("2_c8atv")
 default_inventory_logo = ExtResource("3_isve4")
 
+[node name="DebugLabel" type="Label" parent="InventoryNode"]
+offset_right = 402.0
+offset_bottom = 59.0
+
+[node name="DebugLabel2" type="Label" parent="InventoryNode"]
+offset_top = 71.0
+offset_right = 402.0
+offset_bottom = 130.0
+
 [node name="ActiveSlot" type="Label" parent="InventoryNode"]
-offset_left = 723.0
-offset_top = 856.0
-offset_right = 823.0
-offset_bottom = 879.0
+offset_left = 724.0
+offset_top = 1049.0
+offset_right = 824.0
+offset_bottom = 1072.0
 
 [node name="InventoryUI" type="GridContainer" parent="InventoryNode"]
 custom_minimum_size = Vector2(50, 50)
-anchors_preset = -1
 offset_left = 723.0
-offset_top = 890.0
+offset_top = 936.0
 offset_right = 1239.0
-offset_bottom = 990.0
+offset_bottom = 1036.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 columns = 5
@@ -147,15 +155,6 @@ land_sound = ExtResource("18_663t3")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 script = ExtResource("19_qsvhk")
 footsteps_handler = NodePath("../FootstepsAudio/FootstepsHandler")
-
-[node name="DebugLabel" type="Label" parent="."]
-offset_right = 402.0
-offset_bottom = 59.0
-
-[node name="DebugLabel2" type="Label" parent="."]
-offset_top = 71.0
-offset_right = 402.0
-offset_bottom = 130.0
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = 960.0

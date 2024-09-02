@@ -6,7 +6,7 @@ extends Node3D
 
 var mesh_size = Vector2()
 
-var mouse_entered = true
+var mouse_entered = false
 var mouse_held = false
 var mouse_inside = false
 
@@ -31,9 +31,8 @@ func _unhandled_input(event):
 		viewport.push_input(event,true)
 	
 	
-func handle_mouse(event):
+func handle_mouse(event): 
 	mesh_size = display.mesh.size
-	
 	if event is InputEventMouseButton or event is InputEventScreenTouch:
 		mouse_held = event.pressed
 	var mouse_pos3D = find_mouse(event.global_position)

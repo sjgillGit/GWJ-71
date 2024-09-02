@@ -6,7 +6,7 @@ func _ready():
 	player_cam = get_tree().get_first_node_in_group('player_cam')
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	handle_input()
 
 func interact():
@@ -22,4 +22,5 @@ func handle_input():
 	if Input.is_action_just_pressed("ui_cancel") or Input.is_action_just_pressed("RMB"):
 		player_cam.current = true
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		$"../gui3d".mouse_entered = false
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://balmmwsvdbio1"]
+[gd_scene load_steps=35 format=3 uid="uid://balmmwsvdbio1"]
 
 [ext_resource type="PackedScene" uid="uid://cn0f3xtrg1v14" path="res://Assets/3DModels/Basement/Foundation/Basement.glb" id="1_icye2"]
 [ext_resource type="PackedScene" uid="uid://bdul7cabxrk6b" path="res://Assets/3DModels/Basement/DoorNStairs/DoorNStairs.glb" id="2_caer8"]
@@ -23,7 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://cdaqih0p2ixmd" path="res://Assets/3DModels/Creatures/Buff rat/buff_rat.tscn" id="20_ffdug"]
 [ext_resource type="PackedScene" uid="uid://dpp0tjv3wkwfk" path="res://Scenes/Prefabs/Player/pickupable.tscn" id="20_wssct"]
 [ext_resource type="Texture2D" uid="uid://cty0frl7ffnes" path="res://Assets/UI Textures/vial.png" id="21_usixy"]
-[ext_resource type="PackedScene" uid="uid://cu7c0clrug6q0" path="res://Assets/3DModels/Basement/Mutator machine/mutator_machine_v_2.tscn" id="22_arcra"]
+[ext_resource type="PackedScene" uid="uid://b7q8bp3xj1tnt" path="res://Assets/3DModels/Basement/Mutator machine v2/mutator machine.tscn" id="24_m2avm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xsjmc"]
 size = Vector3(144.232, 44.4752, 0.329834)
@@ -37,8 +37,15 @@ friction = 0.5
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hpb40"]
 radius = 0.274292
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_lfcfx"]
+height = 0.468092
+radius = 0.235374
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_lnpju"]
 size = Vector3(6.49625, 3.85162, 5.12256)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f6pfe"]
+size = Vector3(1.05432, 1.08687, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tk7kx"]
 size = Vector3(1.66907, 0.438049, 0.568359)
@@ -82,7 +89,7 @@ shape = SubResource("BoxShape3D_apktm")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.3239, -9.75613, -74.8006)
 
 [node name="Player" parent="." instance=ExtResource("3_q4ay8")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -74.4465, -8.2683, 48.4968)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -42.9038, -8.93757, 48.4968)
 
 [node name="Axe" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.940151, -0.340757, 0, 0.340757, 0.940151, -76.6874, -9.11139, 52.8367)
@@ -100,8 +107,17 @@ shape = SubResource("CapsuleShape3D_hpb40")
 [node name="Pickupable" parent="Axe" instance=ExtResource("20_wssct")]
 Ui_texture = ExtResource("6_2vn13")
 
-[node name="Beaker container" parent="." instance=ExtResource("5_aj2hr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.4652, -9.17644, 53.1926)
+[node name="Beaker" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.1615, -7.88078, 50.663)
+mass = 0.3
+
+[node name="Beaker container" parent="Beaker" instance=ExtResource("5_aj2hr")]
+
+[node name="Pickupable" parent="Beaker" instance=ExtResource("20_wssct")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Beaker"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.239303, 0)
+shape = SubResource("CylinderShape3D_lfcfx")
 
 [node name="cabinet" parent="." instance=ExtResource("6_mp3ln")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.407, -9.17644, 52.3211)
@@ -114,6 +130,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00932312, 1.97919, 0.00463
 shape = SubResource("BoxShape3D_lnpju")
 
 [node name="Cage 1" parent="Cage" instance=ExtResource("7_ets3w")]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Cage"]
+transform = Transform3D(1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 3.67628, 0)
+spot_range = 9.792
+spot_angle = 70.45
 
 [node name="Cage 2" parent="." instance=ExtResource("7_ets3w")]
 transform = Transform3D(0.95659, 0, 0.291437, 0, 1, 0, -0.291437, 0, 0.95659, 10.8948, -9.17644, 34.5049)
@@ -133,8 +154,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.2909, -9.17644, 51.6109)
 [node name="crate" parent="." instance=ExtResource("9_e577w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64.0729, -9.17644, 51.9852)
 
-[node name="Crate 2" parent="." instance=ExtResource("10_r6vd8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.0527, -9.17644, 51.9995)
+[node name="Crate 2" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.0527, -9.08904, 50.7685)
+
+[node name="Crate 2" parent="Crate 2" instance=ExtResource("10_r6vd8")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crate 2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00115967, 0.54458, 0)
+shape = SubResource("BoxShape3D_f6pfe")
 
 [node name="Filtration powder" parent="." instance=ExtResource("11_3nv2u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67.7056, -9.17644, 52.4876)
@@ -197,10 +224,10 @@ shape = SubResource("CapsuleShape3D_crog7")
 Ui_texture = ExtResource("21_usixy")
 
 [node name="Rat" parent="." instance=ExtResource("20_1a4xg")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -56.2302, -9.1027, 49.6501)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -43.2936, -7.4396, 51.8418)
 
 [node name="buff rat" parent="." instance=ExtResource("20_ffdug")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -57.9995, -8.6953, 49.6501)
 
-[node name="mutator machine v2" parent="." instance=ExtResource("22_arcra")]
-transform = Transform3D(-2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, -43.8221, -9.10837, 52.5735)
+[node name="mutator machine" parent="." instance=ExtResource("24_m2avm")]
+transform = Transform3D(-2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, -42.9038, -9.17207, 52.8526)

@@ -12,11 +12,6 @@ class_name Creature_traits
 func _ready():
 	pass
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 # Prints all traits for debugging
 func print_traits():
 	print('Base creature: ', base_creature)

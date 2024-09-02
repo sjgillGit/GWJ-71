@@ -14,7 +14,7 @@ func _process(_delta):
 
 func handle_interactions():
 	collider = InteractRay.get_collider()
-	$"../DebugLabel".text = collider.name if collider else ''
+	$"../InventoryNode/DebugLabel".text = collider.name if collider else ''
 	
 	# Picking up
 	if Input.is_action_just_pressed("interact") and collider:
@@ -25,9 +25,9 @@ func handle_interactions():
 	
 	# Interacting and pushing
 		if collider.has_method('interact'):
-			$"../DebugLabel2".text = 'Interacted with ' + collider.name
+			$"../InventoryNode/DebugLabel2".text = 'Interacted with ' + collider.name
 			collider.interact()
 		else: if collider is RigidBody3D:
 				var impulse = player.position.direction_to(collider.position).normalized()*50
 				collider.apply_central_force(impulse)
-				$"../DebugLabel2".text = 'Pushed ' + collider.name
+				$"../InventoryNode/DebugLabel2".text = 'Pushed ' + collider.name
