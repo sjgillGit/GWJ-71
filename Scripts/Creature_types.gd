@@ -8,12 +8,12 @@ var buff_rat = {
 	"name": 'creature_rat_buff',
 	"base_creature": 'rat',
 	"req": {
-		'size':         range(0, 100), 
-		"strength":     range(50, 100),
-		'intelligence': range(0, 100), 
-		'aggression':   range(0, 100), 
-		'cuteness':     range(0, 100), 
-		'speed':        range(0, 100)
+		'size':         range(0, 101), 
+		"strength":     range(50, 101),
+		'intelligence': range(0, 101), 
+		'aggression':   range(0, 101), 
+		'cuteness':     range(0, 101), 
+		'speed':        range(0, 101)
 		}
 }
 
@@ -21,12 +21,12 @@ var splinter = {
 	"name": 'creature_rat_splinter',
 	"base_creature": 'rat',
 	"req": {
-		'size':         range(0, 100), 
-		"strength":     range(50, 100),
-		'intelligence': range(70, 100), 
-		'aggression':   range(0, 100), 
-		'cuteness':     range(0, 100), 
-		'speed':        range(60, 100)
+		'size':         range(0, 101), 
+		"strength":     range(50, 101),
+		'intelligence': range(70, 101), 
+		'aggression':   range(0, 101), 
+		'cuteness':     range(0, 101), 
+		'speed':        range(60, 101)
 			}
 }
 
@@ -34,12 +34,12 @@ var aggressive_rat = {
 	"name": 'creature_rat_aggressive',
 	"base_creature": 'rat',
 	"req": {
-		'size':         range(0, 100), 
-		"strength":     range(0, 100),
-		'intelligence': range(0, 100), 
-		'aggression':   range(70, 100), 
-		'cuteness':     range(0, 100), 
-		'speed':        range(0, 100)
+		'size':         range(0, 101), 
+		"strength":     range(0, 101),
+		'intelligence': range(0, 101), 
+		'aggression':   range(70, 101), 
+		'cuteness':     range(0, 101), 
+		'speed':        range(0, 101)
 			}
 }
 

@@ -30,7 +30,7 @@ func pick_up(item):
 		emit_signal('inventory_updated')
 		return true
 	
-	for i in range(0, 4):
+	for i in range(0, 5):
 		if storage[i] == null:
 			storage[i] = item
 			# Item is frozen in space somewhere far

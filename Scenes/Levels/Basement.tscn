@@ -1,6 +1,7 @@
-[gd_scene load_steps=35 format=3 uid="uid://balmmwsvdbio1"]
+[gd_scene load_steps=37 format=3 uid="uid://balmmwsvdbio1"]
 
 [ext_resource type="PackedScene" uid="uid://cn0f3xtrg1v14" path="res://Assets/3DModels/Basement/Foundation/Basement.glb" id="1_icye2"]
+[ext_resource type="Shader" path="res://Scripts/Shaders/PS1.gdshader" id="1_rqrr6"]
 [ext_resource type="PackedScene" uid="uid://bdul7cabxrk6b" path="res://Assets/3DModels/Basement/DoorNStairs/DoorNStairs.glb" id="2_caer8"]
 [ext_resource type="PackedScene" uid="uid://cmn8cv4xlsjwe" path="res://Scenes/Prefabs/Player/Player.tscn" id="3_q4ay8"]
 [ext_resource type="PackedScene" uid="uid://dlb0phh8up51l" path="res://Assets/3DModels/Basement/Axe/Axe.glb" id="4_l2pp0"]
@@ -18,12 +19,11 @@
 [ext_resource type="PackedScene" uid="uid://c5kloe2h3q0x0" path="res://Assets/3DModels/Basement/Table/Table.glb" id="15_ovv2y"]
 [ext_resource type="PackedScene" uid="uid://jqsak7r4w8yl" path="res://Assets/3DModels/Basement/Ladder/Ladder.glb" id="16_xia6l"]
 [ext_resource type="PackedScene" uid="uid://b2866ubj0npqf" path="res://Scenes/UI/laptop.tscn" id="18_iddpo"]
-[ext_resource type="PackedScene" uid="uid://mchpcplaoiq0" path="res://Assets/3DModels/Basement/Vial/vial.glb" id="19_l1gt1"]
-[ext_resource type="PackedScene" uid="uid://dv8n8d4jw2s0" path="res://Assets/3DModels/Creatures/Rat/rat.tscn" id="20_1a4xg"]
-[ext_resource type="PackedScene" uid="uid://cdaqih0p2ixmd" path="res://Assets/3DModels/Creatures/Buff rat/buff_rat.tscn" id="20_ffdug"]
+[ext_resource type="PackedScene" uid="uid://dv8n8d4jw2s0" path="res://Scenes/Creatures/rat.tscn" id="20_1a4xg"]
+[ext_resource type="PackedScene" uid="uid://b0emm82pisgsc" path="res://Scenes/vial.tscn" id="20_rexn4"]
 [ext_resource type="PackedScene" uid="uid://dpp0tjv3wkwfk" path="res://Scenes/Prefabs/Player/pickupable.tscn" id="20_wssct"]
-[ext_resource type="Texture2D" uid="uid://cty0frl7ffnes" path="res://Assets/UI Textures/vial.png" id="21_usixy"]
-[ext_resource type="PackedScene" uid="uid://b7q8bp3xj1tnt" path="res://Assets/3DModels/Basement/Mutator machine v2/mutator machine.tscn" id="24_m2avm"]
+[ext_resource type="PackedScene" uid="uid://b7q8bp3xj1tnt" path="res://Scenes/mutator machine.tscn" id="24_m2avm"]
+[ext_resource type="Shader" path="res://Scripts/Shaders/CRT.gdshader" id="25_o6q63"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xsjmc"]
 size = Vector3(144.232, 44.4752, 0.329834)
@@ -53,9 +53,19 @@ size = Vector3(1.66907, 0.438049, 0.568359)
 [sub_resource type="BoxShape3D" id="BoxShape3D_yukyl"]
 size = Vector3(1, 4.854, 0.308716)
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_crog7"]
-radius = 0.0461755
-height = 0.375388
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lg78m"]
+shader = ExtResource("25_o6q63")
+shader_parameter/scanline_count = 50.0
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_w4aae"]
+specular_color = Color(0.239216, 0.258824, 0.266667, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2q558"]
+shader = ExtResource("1_rqrr6")
+shader_parameter/enabled = true
+shader_parameter/dithering = true
+shader_parameter/colors = 12
+shader_parameter/dither_size = 1
 
 [node name="Basement" type="Node3D"]
 
@@ -130,6 +140,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00932312, 1.97919, 0.00463
 shape = SubResource("BoxShape3D_lnpju")
 
 [node name="Cage 1" parent="Cage" instance=ExtResource("7_ets3w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0500259, 0)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Cage"]
 transform = Transform3D(1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 3.67628, 0)
@@ -209,25 +220,39 @@ shape = SubResource("BoxShape3D_yukyl")
 [node name="Laptop" parent="." instance=ExtResource("18_iddpo")]
 transform = Transform3D(-0.999665, 0, -0.0258805, 0, 1, 0, 0.0258805, 0, -0.999665, -73.1636, -8.61125, 52.38)
 
-[node name="Vial" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.0166845, -0.999861, 0, 0.999861, -0.0166845, -73.9049, -8.54129, 52.4263)
-mass = 0.05
-
-[node name="Vial" parent="Vial" instance=ExtResource("19_l1gt1")]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Vial"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.168164, 0)
-shape = SubResource("CapsuleShape3D_crog7")
-
-[node name="Pickupable" parent="Vial" instance=ExtResource("20_wssct")]
-Ui_texture = ExtResource("21_usixy")
+[node name="Vial" parent="." instance=ExtResource("20_rexn4")]
+transform = Transform3D(1, 0, 0, 0, -0.0166845, -0.999861, 0, 0.999861, -0.0166845, -42.3457, -7.25221, 50.8251)
+traits = {
+"aggression": -5,
+"cuteness": 10,
+"intelligence": 0,
+"size": 20,
+"speed": 10,
+"strength": 10
+}
 
 [node name="Rat" parent="." instance=ExtResource("20_1a4xg")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -43.2936, -7.4396, 51.8418)
-
-[node name="buff rat" parent="." instance=ExtResource("20_ffdug")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -57.9995, -8.6953, 49.6501)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -43.2936, -7.4396, 50.7301)
 
 [node name="mutator machine" parent="." instance=ExtResource("24_m2avm")]
-transform = Transform3D(-2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, -42.9038, -9.17207, 52.8526)
+transform = Transform3D(-2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, -42.9038, -9.17207, 51.686)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_lg78m")
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = SubResource("CanvasTexture_w4aae")
+expand_mode = 2
+
+[node name="PS1 Shader" type="SubViewportContainer" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_2q558")
+offset_right = 1925.0
+offset_bottom = 1088.0
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="PS1 Shader"]
+handle_input_locally = false
+size = Vector2i(1925, 1088)
+render_target_update_mode = 0

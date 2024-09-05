@@ -25,14 +25,18 @@ func trait_change(change: Dictionary):
 		traits[element] += change[element]
 		traits[element] = clamp(traits[element], 0, 100)
 
-# Sets new base_creature and 
+func set_traits(change: Dictionary):
+	for element in change:
+		traits[element] = change[element]
+		traits[element] = clamp(traits[element], 0, 100)
+
+# Sets new base_creature and traits
 func set_type(new_type: String):
-	
 	if new_type == 'rat':
 		base_creature = 'rat'
 		gender_male = randi_range(0, 1)
 		traits = {'size': randi_range(1, 5),          'strength': randi_range(1, 8),
-				  'intelligence': randi_range(1, 8),  'aggression': randi_range(80, 80),
+				  'intelligence': randi_range(1, 8),  'aggression': randi_range(10, 20),
 				  'cuteness': randi_range(5, 12),     'speed': randi_range(10, 35)}
 		return
 	
