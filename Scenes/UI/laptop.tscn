@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/UI/StaticBody3D.gd" id="1_je0x8"]
 [ext_resource type="Script" path="res://Scenes/UI/gui3d.gd" id="2_genas"]
 [ext_resource type="PackedScene" uid="uid://cg2ru71agh8t3" path="res://Scenes/UI/laptop screen UI.tscn" id="2_hv74x"]
-[ext_resource type="PackedScene" uid="uid://brbobi6rj7efx" path="res://Assets/3DModels/Basement/Laptop.glb" id="2_i6k3b"]
+[ext_resource type="PackedScene" uid="uid://brbobi6rj7efx" path="res://Main/Environment/Basement/Laptop.glb" id="2_i6k3b"]
 [ext_resource type="AudioStream" uid="uid://bjgb6rg8dv5vv" path="res://Assets/Audio/PCstartup.mp3" id="5_osfrq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mfmrt"]
@@ -61,7 +61,6 @@ shape = SubResource("BoxShape3D_xa1jl")
 [node name="SubViewport" type="SubViewport" parent="gui3d"]
 handle_input_locally = false
 size = Vector2i(1152, 648)
-render_target_update_mode = 0
 
 [node name="laptop screen" parent="gui3d/SubViewport" instance=ExtResource("2_hv74x")]
 material = SubResource("ShaderMaterial_1e5u6")

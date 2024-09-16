@@ -35,6 +35,7 @@ func handle_mouse(event):
 	mesh_size = display.mesh.size
 	if event is InputEventMouseButton or event is InputEventScreenTouch:
 		mouse_held = event.pressed
+	
 	var mouse_pos3D = find_mouse(event.global_position)
 	
 	mouse_inside = mouse_pos3D != null
@@ -70,7 +71,7 @@ func handle_mouse(event):
 	last_mouse_pos_2D = mouse_pos2D
 	
 	viewport.push_input(event)
-	
+	mouse_held = false
 
 func find_mouse(pos:Vector2):
 	var camera = get_viewport().get_camera_3d()

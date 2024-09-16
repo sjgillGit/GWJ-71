@@ -1,28 +1,26 @@
-[gd_scene load_steps=37 format=3 uid="uid://balmmwsvdbio1"]
+[gd_scene load_steps=35 format=3 uid="uid://balmmwsvdbio1"]
 
-[ext_resource type="PackedScene" uid="uid://cn0f3xtrg1v14" path="res://Assets/3DModels/Basement/Foundation/Basement.glb" id="1_icye2"]
+[ext_resource type="PackedScene" uid="uid://cn0f3xtrg1v14" path="res://Main/Environment/Basement/Foundation/Basement.glb" id="1_icye2"]
 [ext_resource type="Shader" path="res://Scripts/Shaders/PS1.gdshader" id="1_rqrr6"]
-[ext_resource type="PackedScene" uid="uid://bdul7cabxrk6b" path="res://Assets/3DModels/Basement/DoorNStairs/DoorNStairs.glb" id="2_caer8"]
+[ext_resource type="PackedScene" uid="uid://bdul7cabxrk6b" path="res://Main/Environment/Basement/DoorNStairs/DoorNStairs.glb" id="2_caer8"]
 [ext_resource type="PackedScene" uid="uid://cmn8cv4xlsjwe" path="res://Scenes/Prefabs/Player/Player.tscn" id="3_q4ay8"]
-[ext_resource type="PackedScene" uid="uid://dlb0phh8up51l" path="res://Assets/3DModels/Basement/Axe/Axe.glb" id="4_l2pp0"]
-[ext_resource type="PackedScene" uid="uid://ckm2smnrvlcfu" path="res://Assets/3DModels/Basement/Beaker container/Beaker container.glb" id="5_aj2hr"]
+[ext_resource type="PackedScene" uid="uid://dlb0phh8up51l" path="res://Main/Environment/Basement/Axe/Axe.glb" id="4_l2pp0"]
+[ext_resource type="PackedScene" uid="uid://ckm2smnrvlcfu" path="res://Main/Environment/Basement/Beaker container/Beaker container.glb" id="5_aj2hr"]
 [ext_resource type="Texture2D" uid="uid://c1o84hobe0wea" path="res://Assets/UI Textures/axe.png" id="6_2vn13"]
-[ext_resource type="PackedScene" uid="uid://datlrxykmcoc4" path="res://Assets/3DModels/Basement/cabinet/cabinet.glb" id="6_mp3ln"]
-[ext_resource type="PackedScene" uid="uid://pkw4iol2lbj4" path="res://Assets/3DModels/Basement/Cage 1/Cage 1.glb" id="7_ets3w"]
-[ext_resource type="PackedScene" uid="uid://d1348iq5bobgv" path="res://Assets/3DModels/Basement/Chest/Chest.glb" id="8_7rnwa"]
-[ext_resource type="PackedScene" uid="uid://cy5xaf4xuff7r" path="res://Assets/3DModels/Basement/crate/crate.glb" id="9_e577w"]
-[ext_resource type="PackedScene" uid="uid://48fsug3ectrp" path="res://Assets/3DModels/Basement/Crate 2/Crate 2.glb" id="10_r6vd8"]
-[ext_resource type="PackedScene" uid="uid://dkwfkm25lgn30" path="res://Assets/3DModels/Basement/Filtration Powder/Filtration powder.glb" id="11_3nv2u"]
-[ext_resource type="PackedScene" uid="uid://b5vkpgu2ms5f" path="res://Assets/3DModels/Basement/Fish Tank/Fish tank.glb" id="12_uys7b"]
-[ext_resource type="PackedScene" uid="uid://nd6anjjb0s48" path="res://Assets/3DModels/Basement/Shelf/Shelf.glb" id="13_umtjr"]
-[ext_resource type="PackedScene" uid="uid://dkbhc3s114m0c" path="res://Assets/3DModels/Basement/shelf 2/shelf 2.glb" id="14_c0f5u"]
-[ext_resource type="PackedScene" uid="uid://c5kloe2h3q0x0" path="res://Assets/3DModels/Basement/Table/Table.glb" id="15_ovv2y"]
-[ext_resource type="PackedScene" uid="uid://jqsak7r4w8yl" path="res://Assets/3DModels/Basement/Ladder/Ladder.glb" id="16_xia6l"]
+[ext_resource type="PackedScene" uid="uid://datlrxykmcoc4" path="res://Main/Environment/Basement/cabinet/cabinet.glb" id="6_mp3ln"]
+[ext_resource type="PackedScene" uid="uid://pkw4iol2lbj4" path="res://Main/Environment/Basement/Cage 1/Cage 1.glb" id="7_ets3w"]
+[ext_resource type="PackedScene" uid="uid://48fsug3ectrp" path="res://Main/Environment/Basement/Crate 2/Crate 2.glb" id="10_r6vd8"]
+[ext_resource type="PackedScene" uid="uid://dkwfkm25lgn30" path="res://Main/Environment/Basement/Filtration Powder/Filtration powder.glb" id="11_3nv2u"]
+[ext_resource type="PackedScene" uid="uid://b5vkpgu2ms5f" path="res://Main/Environment/Basement/Fish Tank/Fish tank.glb" id="12_uys7b"]
+[ext_resource type="PackedScene" uid="uid://nd6anjjb0s48" path="res://Main/Environment/Basement/Shelf/Shelf.glb" id="13_umtjr"]
+[ext_resource type="PackedScene" uid="uid://dkbhc3s114m0c" path="res://Main/Environment/Basement/shelf 2/shelf 2.glb" id="14_c0f5u"]
+[ext_resource type="PackedScene" uid="uid://c5kloe2h3q0x0" path="res://Main/Environment/Basement/Table/Table.glb" id="15_ovv2y"]
+[ext_resource type="PackedScene" uid="uid://jqsak7r4w8yl" path="res://Main/Environment/Basement/Ladder/Ladder.glb" id="16_xia6l"]
 [ext_resource type="PackedScene" uid="uid://b2866ubj0npqf" path="res://Scenes/UI/laptop.tscn" id="18_iddpo"]
-[ext_resource type="PackedScene" uid="uid://dv8n8d4jw2s0" path="res://Scenes/Creatures/rat.tscn" id="20_1a4xg"]
-[ext_resource type="PackedScene" uid="uid://b0emm82pisgsc" path="res://Scenes/vial.tscn" id="20_rexn4"]
+[ext_resource type="PackedScene" uid="uid://dv8n8d4jw2s0" path="res://Main/Creatures/Rat/rat.tscn" id="20_1a4xg"]
+[ext_resource type="PackedScene" uid="uid://b0emm82pisgsc" path="res://Main/Environment/Basement/Vial/vial.tscn" id="20_rexn4"]
 [ext_resource type="PackedScene" uid="uid://dpp0tjv3wkwfk" path="res://Scenes/Prefabs/Player/pickupable.tscn" id="20_wssct"]
-[ext_resource type="PackedScene" uid="uid://b7q8bp3xj1tnt" path="res://Scenes/mutator machine.tscn" id="24_m2avm"]
+[ext_resource type="PackedScene" uid="uid://b7q8bp3xj1tnt" path="res://Main/Environment/Basement/Mutator machine v2/mutator machine.tscn" id="24_m2avm"]
 [ext_resource type="Shader" path="res://Scripts/Shaders/CRT.gdshader" id="25_o6q63"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xsjmc"]
@@ -159,12 +157,6 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.10288, 0, -9.66267)
 [node name="Ladder2" parent="Cage 2" instance=ExtResource("16_xia6l")]
 transform = Transform3D(0.609811, 0.0294205, -0.792169, -0.0174497, 1.20176, 0.0174524, 0.792355, 0.00382333, 0.610052, -5.99315, 0, -5.28957)
 
-[node name="Chest" parent="." instance=ExtResource("8_7rnwa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.2909, -9.17644, 51.6109)
-
-[node name="crate" parent="." instance=ExtResource("9_e577w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64.0729, -9.17644, 51.9852)
-
 [node name="Crate 2" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.0527, -9.08904, 50.7685)
 
@@ -218,7 +210,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.47339, -0.00948715)
 shape = SubResource("BoxShape3D_yukyl")
 
 [node name="Laptop" parent="." instance=ExtResource("18_iddpo")]
-transform = Transform3D(-0.999665, 0, -0.0258805, 0, 1, 0, 0.0258805, 0, -0.999665, -73.1636, -8.61125, 52.38)
+transform = Transform3D(-0.999665, 0, -0.0258805, 0, 1, 0, 0.0258805, 0, -0.999665, -36.8668, -8.61125, 52.38)
 
 [node name="Vial" parent="." instance=ExtResource("20_rexn4")]
 transform = Transform3D(1, 0, 0, 0, -0.0166845, -0.999861, 0, 0.999861, -0.0166845, -42.3457, -7.25221, 50.8251)

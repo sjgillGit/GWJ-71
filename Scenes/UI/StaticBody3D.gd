@@ -10,12 +10,9 @@ func _process(_delta):
 	handle_input()
 
 func interact():
-	if !$"../gui3d/SubViewport/laptop screen".visible:
-		$"../gui3d/SubViewport/laptop screen".visible = true
-		$"../StartupSound".play()
-	
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	$"../Camera3D".current = true
+	$"../gui3d".mouse_entered = true
 
 
 func handle_input():
