@@ -5,21 +5,26 @@ extends Node
 @onready var vial_slot = $VialSlot
 @onready var vial = vial_slot.vial_inside
 @onready var vial_ind_ON = $Meshes/IndicatorVialON
-@onready var crature_scenes = get_all_in_folder('res://Scenes/Creatures/')
+@onready var crature_scenes = get_all_in_folder("res://Main/Creatures/")
 @onready var scene_root = $'..'
 
 func get_all_in_folder(path):
 	var items = {}
 	var dir = DirAccess.open(path)
+	
 	if not dir:
 		push_error("Invalid dir: " + path)
 		return items  # Return an empty list if the directory is invalid
-	# print("Opening directory: ", path)
+	
+	print("Opening directory: ", path)
 	dir.list_dir_begin()
 	var file_name = dir.get_next()
 	while file_name != "":
 		# print("Found file: ", file_name)
-		if !file_name.begins_with(".") and !file_name.ends_with(".import"):
+		if dir.current_is_dir():
+			items.merge(get_all_in_folder("res://Main/Creatures/" + str(file_name)))
+		
+		if !file_name.begins_with(".") and file_name.ends_with(".tscn"):
 			var full_path = path + "/" + file_name
 			# Remove .remap extension if present
 			if full_path.ends_with(".remap"):
